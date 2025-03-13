@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+.hhh {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+.shodoww {
+    box-shadow: 1px 4px 11px -6px rgba(0, 0, 0, 0.75);
+}
+.bshadow {
+    box-shadow: -1px 2px 26px -6px rgba(0, 0, 0, 0.75);
+}
+.greenG {
+    background: linear-gradient(
+        0deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(14, 119, 10, 1) 97%
+    );
+}
+
+.custom-select {
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+    border: 2px solid #047857;
+    border-radius: 8px;
+    background-color: white;
+
+    font-size: 16px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+.img1 {
+    background-image: url("/public/images/w1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.custom-select:hover {
+    border-color: black;
+}
+
+.custom-select:focus {
+    border-color: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-select option {
+    background-color: white;
+}
+
+.custom-select option:hover {
+    background-color: white;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 18px;
+    color: #047857;
+}
+.truncate-multiline {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5rem;
+    max-height: 4.5rem;
+}
+
+.custom-arrow::after {
+    content: "↓";
+    font-weight: bold;
+}
+
+.gradd {
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(36, 103, 33, 1) 62%,
+        rgba(14, 116, 10, 1) 97%
+    );
+}
+.image-text {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 30% !important;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+    }
+}

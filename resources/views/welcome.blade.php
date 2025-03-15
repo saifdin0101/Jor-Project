@@ -25,77 +25,513 @@
 </head>
 
 <body class="overflow-x-hidden">
-    {{-- <div class="greenG w-full h-[50px]"></div> --}}
-    <nav class="bg-white shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-            <!-- Logo (SVG Text with Image Fill) -->
-            <a href="#" class="flex items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" dir="rtl" class="w-48 h-auto">
-                    <defs>
-                        <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="800" height="200">
-                            <image href="{{ asset('images/w2.webp') }}" width="800" height="140" />
-                        </pattern>
-                    </defs>
-                    <text x="50%" y="60%" font-family="serif" font-size="70" font-weight="bold" text-anchor="middle"
-                        fill="url(#imagePattern)">
-                        اسهم الاردن
-                    </text>
-                </svg>
-            </a>
+    <nav class="bg-white shadow-lg z-[99999999999999999] sticky top-0  transition-all duration-300">
+       
+        <div class="hidden lg:flex mx-auto px-6 py-4 flex-col gap-5">
+            <div class="w-full h-[50px] flex justify-between items-center">
+                <div>
+                    <a href="#" class="flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" dir="rtl"
+                            class="w-[400px] textshadoww h-auto">
+                            <defs>
+                                <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="800" height="200">
+                                    <image href="{{ asset('images/w2.webp') }}" width="800" height="140" />
+                                </pattern>
+                            </defs>
+                            <text x="50%" y="60%" font-family="serif" font-size="70" font-weight="bold"
+                                text-anchor="middle" fill="url(#imagePattern)">
+                                اسهم الاردن
+                            </text>
+                        </svg>
+                    </a>
+                </div>
+                <div class="flex gap-10 items-center">
+                    <!-- Login Button -->
+                    <button
+                        class="bg-green-800 px-6 py-2 border-green-800 rounded-full text-white  
+                        transition-all font-semibold duration-300 ease-in-out hover:bg-transparent hover:text-green-800 border-2">
+                        تسجيل الدخول
+                    </button>
 
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex space-x-6 font-semibold text-[#48555d]">
-                <a href="#" class="hover:text-green-600">اخبار</a>
-                <a href="#" class="hover:text-green-600">معلومات شركات</a>
-                <a href="#" class="hover:text-green-600">بيانات المالية</a>
-                <a href="#" class="hover:text-green-600">مؤشرات مالية</a>
-                <a href="#" class="hover:text-green-600">محللون</a>
-                <a href="#" class="hover:text-green-600">الاكتتابات</a>
-                <a href="#" class="hover:text-green-600">صناديق</a>
-                <a href="#" class="hover:text-green-600">مشاريع</a>
-                <a href="#" class="hover:text-green-600">رسوم بيانية</a>
+                    <!-- Register Button -->
+                    <button class="border-green-800 border-2 bg-transparent text-black font-semibold px-6 py-2 rounded-full 
+                        transition-all duration-300 ease-in-out hover:bg-green-800 hover:text-white">
+                        إنشاء حساب
+                    </button>
+
+                    <!-- Search Input with Icon -->
+                    <div class="relative w-[300px]">
+                        <input
+                            class="rounded-full border-green-800 border-2 w-full p-2 pl-10 focus:outline-none text-right 
+                            transition-all duration-300 ease-in-out focus:ring-2 focus:ring-green-500 focus:border-green-600"
+                            placeholder="ابحث عن..." type="search">
+                        <i class="fa-solid fa-magnifying-glass text-white text-xl p-2 rounded-full bg-green-800 
+                            absolute left-2 top-1/2 transform -translate-y-1/2 cursor-pointer 
+                            transition-all duration-300 ease-in-out hover:bg-green-700">
+                        </i>
+                    </div>
+                </div>
             </div>
 
-            <!-- Search Bar -->
-            <div class="hidden lg:block ">
-                <input placeholder="بحث عن ..." type="text"
-                    class="px-4 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
-                <button class="bg-green-600 hover:opacity-80 cursor-pointer py-2 px-4 rounded-lg">تسجيل الدخول</button>
+            <div class="bg-green-800 w-full z-[999] h-[60px] flex justify-around items-center font-semibold text-white">
+                <!-- Navbar Item with Dropdown -->
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        اخبار <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">أحدث
+                            الأخبار</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">الأخبار
+                            العاجلة</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">تحليلات</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        معلومات شركات <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">بيانات
+                            الشركات</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">أرباح
+                            الشركات</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">التقارير
+                            المالية</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        بيانات المالية <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">الميزانية
+                            العامة</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">التدفقات
+                            النقدية</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">نتائج
+                            الأعمال</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        مؤشرات مالية <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">تحليل
+                            المؤشرات</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">المؤشرات
+                            العالمية</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        محللون <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">تحليلات
+                            الخبراء</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">التوصيات</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        الاكتتابات <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">الإصدارات
+                            الجديدة</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">الأسهم
+                            المطروحة</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        صناديق <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">صناديق
+                            الاستثمار</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">صناديق
+                            التحوط</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        مشاريع <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">المشاريع
+                            الجديدة</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">الشركات
+                            الناشئة</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <span class="cursor-pointer flex items-center px-2 gap-2">
+                        رسوم بيانية <i class="fa-solid fa-chevron-down text-white"></i>
+                    </span>
+                    <div
+                        class="absolute hidden group-hover:block bg-white mt-2 w-56 shadow-lg rounded-md overflow-hidden">
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">تحليل
+                            الرسوم</a>
+                        <a href="#"
+                            class="block px-4 py-3 text-black hover:bg-gray-100 transition-colors duration-200">المخططات
+                            البيانية</a>
+                    </div>
+                </div>
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="lg:hidden text-2xl focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
-
         </div>
 
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu"
-            class="hidden lg:hidden flex flex-col items-center space-y-4 py-4 text-[#48555d] font-semibold bg-white shadow-md">
-            <input placeholder="بحث عن ..." type="text"
-                class="px-4 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 w-3/4">
-            <a href="#" class="hover:text-green-600">اخبار</a>
-            <a href="#" class="hover:text-green-600">معلومات شركات</a>
-            <a href="#" class="hover:text-green-600">بيانات المالية</a>
-            <a href="#" class="hover:text-green-600">مؤشرات مالية</a>
-            <a href="#" class="hover:text-green-600">محللون</a>
-            <a href="#" class="hover:text-green-600">الاكتتابات</a>
-            <a href="#" class="hover:text-green-600">صناديق</a>
-            <a href="#" class="hover:text-green-600">مشاريع</a>
-            <a href="#" class="hover:text-green-600">رسوم بيانية</a>
+        
+        <div class="lg:hidden">
+            <div class="flex justify-between items-center px-4 py-3 border-b">
+              
+                <div class="flex-1 text-center">
+                    <a href="#" class="inline-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" dir="rtl"
+                            class="w-[200px] h-auto">
+                            <defs>
+                                <pattern id="mobileImagePattern" patternUnits="userSpaceOnUse" width="800" height="200">
+                                    <image href="{{ asset('images/w2.webp') }}" width="800" height="140" />
+                                </pattern>
+                            </defs>
+                            <text x="50%" y="60%" font-family="serif" font-size="70" font-weight="bold"
+                                text-anchor="middle" fill="url(#mobileImagePattern)">
+                                اسهم الاردن
+                            </text>
+                        </svg>
+                    </a>
+                </div>
 
-            <button class="bg-green-600 hover:opacity-80 cursor-pointer py-2 px-4 rounded-lg">تسجيل الدخول</button>
+         
+                <button id="menuToggle" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-800">
+                    <div class="w-6 h-0.5 bg-green-800 transition-all duration-300" id="line1"></div>
+                    <div class="w-6 h-0.5 bg-green-800 my-1.5 transition-all duration-300" id="line2"></div>
+                    <div class="w-6 h-0.5 bg-green-800 transition-all duration-300" id="line3"></div>
+                </button>
+            </div>
+
+          
+            <div class="px-4 py-3 border-b">
+                <div class="relative">
+                    <input
+                        class="rounded-full border-green-800 border-2 w-full p-2 pl-10 focus:outline-none text-right 
+                        transition-all duration-300 ease-in-out focus:ring-2 focus:ring-green-500 focus:border-green-600"
+                        placeholder="ابحث عن..." type="search">
+                    <i class="fa-solid fa-magnifying-glass text-white text-xl p-2 rounded-full bg-green-800 
+                        absolute left-2 top-1/2 transform -translate-y-1/2 cursor-pointer 
+                        transition-all duration-300 ease-in-out hover:bg-green-700">
+                    </i>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                <!-- Login/Register buttons for mobile -->
+                <div class="flex justify-between gap-2 p-4 border-b">
+                    <button class="flex-1 bg-green-800 px-4 py-2 border-green-800 rounded-full text-white 
+                        transition-all font-semibold duration-300 ease-in-out hover:bg-green-900 border-2 text-sm">
+                        تسجيل الدخول
+                    </button>
+                    <button class="flex-1 border-green-800 border-2 bg-transparent text-black font-semibold px-4 py-2 rounded-full 
+                        transition-all duration-300 ease-in-out hover:bg-green-800 hover:text-white text-sm">
+                        إنشاء حساب
+                    </button>
+                </div>
+
+                <!-- Navigation Items -->
+                <div class="bg-white">
+                    <!-- News -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="newsDropdown">
+                            <span>اخبار</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="newsDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">أحدث
+                                الأخبار</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">الأخبار
+                                العاجلة</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">تحليلات</a>
+                        </div>
+                    </div>
+
+                    <!-- Companies Info -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="companiesDropdown">
+                            <span>معلومات شركات</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="companiesDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">بيانات
+                                الشركات</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">أرباح
+                                الشركات</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">التقارير
+                                المالية</a>
+                        </div>
+                    </div>
+
+                    <!-- Financial Data -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="financialDropdown">
+                            <span>بيانات المالية</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="financialDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">الميزانية
+                                العامة</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">التدفقات
+                                النقدية</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">نتائج
+                                الأعمال</a>
+                        </div>
+                    </div>
+
+                    <!-- Financial Indicators -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="indicatorsDropdown">
+                            <span>مؤشرات مالية</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="indicatorsDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">تحليل
+                                المؤشرات</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">المؤشرات
+                                العالمية</a>
+                        </div>
+                    </div>
+
+                    <!-- Analysts -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="analystsDropdown">
+                            <span>محللون</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="analystsDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">تحليلات
+                                الخبراء</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">التوصيات</a>
+                        </div>
+                    </div>
+
+                    <!-- IPOs -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="ipoDropdown">
+                            <span>الاكتتابات</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="ipoDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">الإصدارات
+                                الجديدة</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">الأسهم
+                                المطروحة</a>
+                        </div>
+                    </div>
+
+                    <!-- Funds -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="fundsDropdown">
+                            <span>صناديق</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="fundsDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">صناديق
+                                الاستثمار</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">صناديق
+                                التحوط</a>
+                        </div>
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="projectsDropdown">
+                            <span>مشاريع</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="projectsDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">المشاريع
+                                الجديدة</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">الشركات
+                                الناشئة</a>
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="border-b">
+                        <button
+                            class="dropdown-toggle flex justify-between items-center w-full px-4 py-3 text-right font-semibold"
+                            data-target="chartsDropdown">
+                            <span>رسوم بيانية</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div id="chartsDropdown"
+                            class="dropdown-content bg-gray-50 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">تحليل
+                                الرسوم</a>
+                            <a href="#"
+                                class="block px-6 py-2 text-gray-700 hover:bg-gray-100 text-right border-t border-gray-100">المخططات
+                                البيانية</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
+
     <script>
-        // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+        
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const line1 = document.getElementById('line1');
+            const line2 = document.getElementById('line2');
+            const line3 = document.getElementById('line3');
+            let isMenuOpen = false;
+
+            menuToggle.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+                
+                if (isMenuOpen) {
+                    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+  
+                    line1.classList.add('transform', 'rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('transform', '-rotate-45', '-translate-y-2');
+                } else {
+                    mobileMenu.style.maxHeight = '0';
+
+                    line1.classList.remove('transform', 'rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('transform', '-rotate-45', '-translate-y-2');
+                }
+            });
+
+
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const dropdownContent = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+                    
+
+                    document.querySelectorAll('.dropdown-content').forEach(content => {
+                        if (content.id !== targetId && content.style.maxHeight !== '0px') {
+                            content.style.maxHeight = '0';
+                            const otherIcon = document.querySelector(`[data-target="${content.id}"] i`);
+                            otherIcon.classList.remove('transform', 'rotate-180');
+                        }
+                    });
+                    
+
+                    if (dropdownContent.style.maxHeight === '0px' || !dropdownContent.style.maxHeight) {
+                        dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
+                        icon.classList.add('transform', 'rotate-180');
+                    } else {
+                        dropdownContent.style.maxHeight = '0';
+                        icon.classList.remove('transform', 'rotate-180');
+                    }
+                });
+            });
+
+
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 10) {
+                    nav.classList.add('shadow-xl');
+                } else {
+                    nav.classList.remove('shadow-xl');
+                }
+            });
         });
     </script>
+
+
 
 
     <main class=" flex flex-col gap-25 relative">
@@ -169,13 +605,12 @@
             </script>
 
 
-
             <div
                 class="w-full z-[999999] lg:w-[90%] h-[auto] lg:h-[17vh] flex flex-col lg:flex-row justify-center items-center gap-5 bg-white lg:rounded-lg shadow-lg lg:absolute lg:left-1/2 lg:bottom-[-5rem] lg:-translate-x-1/2 p-4 lg:p-0">
 
                 <!-- Dropdown Section -->
-                <div class="relative w-full lg:w-[250px] mb-4 lg:mb-0">
-                    <select class="custom-select w-full">
+                <div class="relative w-full lg:w-[18%] mb-4 lg:mb-0">
+                    <select class="custom-select w-full lg:mr-2">
                         <option selected value="">السعودية</option>
                         <option value="الإمارات">الإمارات</option>
                         <option value="الكويت">الكويت</option>
@@ -187,44 +622,44 @@
                 </div>
 
                 <!-- Stats Sections (Gold, Silver, etc.) -->
-                <div class="flex flex-wrap justify-center gap-5 w-full lg:w-auto">
+                <div class="flex flex-wrap justify-center  gap-5 w-full   ">
 
                     <div
-                        class="lg:w-[180px] w-[150px] h-[70%] border-l-1 border-gray-300 flex justify-center flex-col gap-2">
+                        class="lg:w-[17%]  w-[150px] h-[70%] border-l-1 border-gray-300 flex justify-center flex-col gap-2">
                         <h1 class="font-semibold text-[#48555d]">ذهب</h1>
                         <p class="font-thin text-gray-500 text-md">1,758.12</p>
                         <p class="text-[#00ba39] text-sm"> ▲ 4.32% +</p>
                     </div>
 
                     <div
-                        class="lg:w-[180px] w-[150px] h-[70%] lg:border-l-1 lg:border-gray-300 flex justify-center flex-col gap-2">
+                        class="lg:w-[17%]  w-[150px] h-[70%] lg:border-l-1 lg:border-gray-300 flex justify-center flex-col gap-2">
                         <h1 class="font-semibold text-[#48555d]">الفضة</h1>
                         <p class="font-thin text-gray-500 text-md">24.99</p>
                         <p class="text-[#00ba39] text-sm">▲ 3.87% + </p>
                     </div>
 
                     <div
-                        class="lg:w-[180px] w-[150px] h-[70%] border-l-1 border-gray-300 flex justify-center flex-col gap-2">
+                        class="lg:w-[17%]  w-[150px] h-[70%] border-l-1 border-gray-300 flex justify-center flex-col gap-2">
                         <h1 class="font-semibold text-[#48555d]">النحاس</h1>
                         <p class="font-thin text-gray-500 text-md">4.29</p>
                         <p class="text-red-600 text-sm">▼ 0.87% - </p>
                     </div>
 
                     <div
-                        class="lg:w-[180px] w-[150px] h-[70%] lg:border-l-1 lg:border-gray-300 flex justify-center flex-col gap-2">
+                        class="lg:w-[17%]  w-[150px] h-[70%] lg:border-l-1 lg:border-gray-300 flex justify-center flex-col gap-2">
                         <h1 class="font-semibold text-[#48555d]">خام الحديد</h1>
                         <p class="font-thin text-gray-500 text-md">120.75</p>
                         <p class="text-[#00ba39] text-sm">▲ 1.45% +</p>
                     </div>
                     <div
-                        class="lg:w-[180px] lg:hidden w-[150px] h-[70%] border-l-1 border-gray-300 flex justify-center flex-col gap-2">
+                        class="lg:w-[17%]  lg:hidden w-[150px] h-[70%] border-l-1 border-gray-300 flex justify-center flex-col gap-2">
                         <h1 class="font-semibold text-[#48555d]">خام الحديد</h1>
                         <p class="font-thin text-gray-500 text-md">120.75</p>
                         <p class="text-[#00ba39] text-sm">▲ 1.45% +</p>
                     </div>
 
                     <div
-                        class="lg:w-[180px] w-[150px] h-[70%] flex justify-center flex-col gap-2 lg:border-l-1 lg:border-gray-300 ">
+                        class="lg:w-[17%]  w-[150px] h-[70%] flex justify-center flex-col gap-2 lg:border-l-1 lg:border-gray-300 ">
                         <h1 class="font-semibold text-[#48555d]">الزنك</h1>
                         <p class="font-thin text-gray-500 text-md">2.65</p>
                         <p class="text-red-600 text-sm">▼ 1.22% -</p>
@@ -324,35 +759,35 @@
                         class="px-6 py-2 hover:opacity-[0.9] cursor-pointer rounded-4xl bg-green-800 text-white">المزيد</button>
                 </div>
                 <div class="flex w-full flex-col lg:flex-row lg:gap-3 justify-center items-center">
-                    <div class="h-[15rem] lg:w-[19rem] w-[24rem] rounded-lg">
+                    <div class="h-[15rem] lg:w-[20%] w-[24rem] rounded-lg">
                         <div class="gradd w-full h-[40%] rounded-lg flex justify-center items-center"><i
                                 class="text-5xl text-white fa-solid fa-chart-line"></i></div>
                         <div class="font-thin text-gray-500 text-lg ">10 مارس 2025</div>
                         <h1 class="text-xl text-gray-600 font-semibold truncate-multiline">ارتفاع مؤشر الأسهم السعودية
                             بنسبة 4.5% في الجلسة الأخيرة وارتفاع الأسعار في قطاع العقارات</h1>
                     </div>
-                    <div class="h-[15rem] lg:w-[19rem] w-[24rem] rounded-lg">
+                    <div class="h-[15rem] lg:w-[20%] w-[24rem] rounded-lg">
                         <div class="gradd w-full h-[40%] rounded-lg flex justify-center items-center"><i
                                 class="text-5xl text-white fa-solid fa-chart-line"></i></div>
                         <div class="font-thin text-gray-500 text-lg ">9 مارس 2025</div>
                         <h1 class="text-xl text-gray-600 font-semibold truncate-multiline">ارتفاع أسعار الذهب وسط توترات
                             عالمية في الأسواق المالية وتوقعات بتأثيرات طويلة الأمد</h1>
                     </div>
-                    <div class="h-[15rem] lg:w-[19rem] w-[24rem] rounded-lg">
+                    <div class="h-[15rem] lg:w-[20%] w-[24rem] rounded-lg">
                         <div class="gradd w-full h-[40%] rounded-lg flex justify-center items-center"><i
                                 class="text-5xl text-white fa-solid fa-chart-line"></i></div>
                         <div class="font-thin text-gray-500 text-lg ">8 مارس 2025</div>
                         <h1 class="text-xl text-gray-600 font-semibold truncate-multiline">أسواق النفط تواجه تقلبات بسبب
                             الأزمة في الشرق الأوسط وتأثيرات على الاقتصاد العالمي</h1>
                     </div>
-                    <div class="h-[15rem] lg:w-[19rem] w-[24rem] rounded-lg">
+                    <div class="h-[15rem] lg:w-[20%] w-[24rem] rounded-lg">
                         <div class="gradd w-full h-[40%] rounded-lg flex justify-center items-center"><i
                                 class="text-5xl text-white fa-solid fa-chart-line"></i></div>
                         <div class="font-thin text-gray-500 text-lg ">7 مارس 2025</div>
                         <h1 class="text-xl text-gray-600 font-semibold truncate-multiline">الأسواق الأوروبية تشهد صعودًا
                             بعد إعلان بيانات اقتصادية إيجابية وتوقعات نمو مستدامة</h1>
                     </div>
-                    <div class="h-[15rem] lg:w-[19rem] w-[24rem] rounded-lg">
+                    <div class="h-[15rem] lg:w-[20%] w-[24rem] rounded-lg">
                         <div class="gradd w-full h-[40%] rounded-lg flex justify-center items-center"><i
                                 class="text-5xl text-white fa-solid fa-chart-line"></i></div>
                         <div class="font-thin text-gray-500 text-lg ">6 مارس 2025</div>
@@ -368,8 +803,8 @@
                 <div class="flex  w-full ">
                     <div class="px-6 py-2 rounded-4xl bg-green-800 text-white">تصنيف الأخبار</div>
                 </div>
-                <div class="flex flex-col lg:flex-row gap-5">
-                    <div class="h-[10rem] w-[22.5rem] rounded-lg bg-red-500 relative">
+                <div class="flex w-full flex-col lg:flex-row gap-5">
+                    <div class="h-[10rem] lg:w-[24%] rounded-lg bg-red-500 relative">
                         <img class="h-full w-full rounded-lg object-cover " src="{{ asset('images/busniss.webp') }}"
                             alt="">
                         <div
@@ -377,7 +812,7 @@
                             <h1 class="text-5xl font-bold text-white">الأعمال </h1>
                         </div>
                     </div>
-                    <div class="h-[10rem] w-[22.5rem] rounded-lg bg-red-500 relative">
+                    <div class="h-[10rem] lg:w-[24%] rounded-lg bg-red-500 relative">
                         <img class="h-full w-full rounded-lg object-cover " src="{{ asset('images/busniss.webp') }}"
                             alt="">
                         <div
@@ -385,7 +820,7 @@
                             <h1 class="text-5xl font-bold text-white">الاقتصاد </h1>
                         </div>
                     </div>
-                    <div class="h-[10rem] w-[22.5rem] rounded-lg bg-red-500 relative">
+                    <div class="h-[10rem] lg:w-[24%] rounded-lg bg-red-500 relative">
                         <img class="h-full w-full rounded-lg object-cover " src="{{ asset('images/busniss.webp') }}"
                             alt="">
                         <div
@@ -393,7 +828,7 @@
                             <h1 class="text-5xl font-bold text-white">العقارات </h1>
                         </div>
                     </div>
-                    <div class="h-[10rem] w-[22.5rem] rounded-lg bg-red-500 relative">
+                    <div class="h-[10rem] lg:w-[24%] rounded-lg bg-red-500 relative">
                         <img class="h-full w-full rounded-lg object-cover " src="{{ asset('images/busniss.webp') }}"
                             alt="">
                         <div
